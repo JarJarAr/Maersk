@@ -33,4 +33,19 @@ class ContainerAvailabilityApplicationTests {
 		webTestClient.get().uri("/api/bookings").exchange()
 		.expectStatus().isOk().returnResult(AvailabilityResponse.class)
 		.getResponseBodyContent();
+		
+	}
+	
+	@Test
+	public void getAvailabilityTestForNonAvailability() {
+		AvailabilityResponse availabilityResponse = new AvailabilityResponse();
+		availabilityResponse.setAvailable(false);
+		when(availabilityService.checkAvailability()).thenReturn(availabilityResponse);
+		
+		webTestClient.get().uri("/api/bookings").exchange()
+		.expectStatus().isOk().returnResult(AvailabilityResponse.class)
+		.getResponseBodyContent();
+		
+	}
+
 }
