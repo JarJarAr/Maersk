@@ -27,8 +27,7 @@ public class BookingService {
 			@Override
 			public void subscribe(CoreSubscriber<? super BookingEntity> actual) {
 				if(response.getAvailable()) {
-					BookingEntity bookEntity = new BookingEntity();
-					bookEntity.setBooking_id(957000002);
+					BookingEntity bookEntity = new BookingEntity();					
 					bookEntity.setObj(booking);
 					bookingRepository.save(bookEntity);
 				}
