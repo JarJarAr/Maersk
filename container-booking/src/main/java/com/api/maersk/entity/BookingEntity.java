@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BookingEntity {
 
-	@PrimaryKey
+	@PrimaryKeyColumn(name="booking_id", ordinal=957000000, ordering = Ordering.ASCENDING)
 	private long booking_id;
 	private Booking obj;
 	
