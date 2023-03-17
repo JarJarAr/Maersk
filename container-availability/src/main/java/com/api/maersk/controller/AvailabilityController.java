@@ -17,7 +17,7 @@ public class AvailabilityController {
 	AvailabilityService availabilityService;
 
 	@GetMapping("/bookings")
-	public AvailabilityResponse viewOrder() {
+	public AvailabilityResponse viewAvailability() {
 		return availabilityService.checkAvailability();
 	}
 }
